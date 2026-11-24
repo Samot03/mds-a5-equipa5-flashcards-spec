@@ -1,0 +1,12 @@
+[
+  { "id": "ferrari", "marca": "Ferrari", "pais": "Itália", "ano": 1947, "fundador": "Enzo Ferrari" },
+  { "id": "porsche", "marca": "Porsche", "pais": "Alemanha", "ano": 1931, "fundador": "Ferdinand Porsche" },
+  { "id": "toyota", "marca": "Toyota", "pais": "Japão", "ano": 1937, "fundador": "Kiichiro Toyoda" },
+  { "id": "volvo", "marca": "Volvo", "pais": "Suécia", "ano": 1927, "fundador": "Assar Gabrielsson e Gustaf Larson" },
+  { "id": "renault", "marca": "Renault", "pais": "França", "ano": 1899, "fundador": "Louis, Marcel e Fernand Renault" },
+  { "id": "seat", "marca": "SEAT", "pais": "Espanha", "ano": 1950, "fundador": "Instituto Nacional de Industria (INI)" },
+  { "id": "skoda", "marca": "Škoda", "pais": "República Checa", "ano": 1895, "fundador": "Václav Laurin e Václav Klement" },
+  { "id": "hyundai", "marca": "Hyundai", "pais": "Coreia do Sul", "ano": 1967, "fundador": "Chung Ju-yung" },
+  { "id": "ford", "marca": "Ford", "pais": "Estados Unidos", "ano": 1903, "fundador": "Henry Ford" },
+  { "id": "tesla", "marca": "Tesla", "pais": "Estados Unidos", "ano": 2003, "fundador": "Martin Eberhard e Marc Tarpenning" }
+]

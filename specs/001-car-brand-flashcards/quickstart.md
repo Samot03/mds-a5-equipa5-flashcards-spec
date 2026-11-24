@@ -45,7 +45,7 @@ Fazer cada passo em **telemóvel (360 px)** e em **desktop**. Marcar ✓ nas dua
 | # | Requisito | Passo | Resultado esperado | 360 px | Desktop |
 |---|---|---|---|---|---|
 | 1 | FR-001 | Abrir a app e percorrer o baralho até ao fim | 10 cartões, cada um com frente (marca) e verso (país, ano, fundador(es)) | ☐ | ☐ |
-| 2 | FR-001 / R8 | Mudar temporariamente o nome de `data/cards.json` e recarregar | Aparece "Não foi possível carregar o baralho."; repor o nome depois | ☐ | ☐ |
+| 2 | FR-001 / R8 | Mudar temporariamente o nome de `data/cards.json` e recarregar com a cache desligada (ferramentas de programador → Network → *Disable cache*, ou janela privada); sem isso o browser pode usar a cópia em cache | Aparece "Não foi possível carregar o baralho."; repor o nome depois | ☐ | ☐ |
 | 3 | FR-002 | Clicar (ou tocar) no cartão; clicar de novo | Mostra o verso; volta à frente | ☐ | ☐ |
 | 4 | FR-003 | No primeiro cartão, sem virar, tentar carregar em "Sei" e "A rever" | Botões inativos; nada acontece | ☐ | ☐ |
 | 5 | FR-003 | Virar, voltar a virar para a frente, carregar em "Sei" | Botões ativos depois de ver o verso; passa ao cartão 2, virado para a frente | ☐ | ☐ |

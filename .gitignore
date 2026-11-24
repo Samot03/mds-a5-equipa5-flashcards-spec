@@ -1,1 +1,14 @@
 .claude
+
+# Sistema e editores
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+.vscode/
+.idea/
+
+# Ferramentas locais de teste (npx serve)
+node_modules/
+*.log
+.env*
