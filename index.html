@@ -12,9 +12,32 @@
     <h1>Flashcards de Estudo</h1>
 
     <section id="ecra-estudo" aria-label="Estudo" hidden>
+      <button type="button" id="cartao" class="cartao">
+        <span class="cartao-interior">
+          <span class="face face-frente">
+            <span id="frente-marca" class="frente-marca"></span>
+          </span>
+          <span class="face face-verso">
+            <span><strong>País:</strong> <span id="verso-pais"></span></span>
+            <span><strong>Fundação:</strong> <span id="verso-ano"></span></span>
+            <span><strong>Fundador(es):</strong> <span id="verso-fundador"></span></span>
+          </span>
+        </span>
+      </button>
+      <p id="anuncio-face" class="so-leitor" aria-live="polite"></p>
+      <p id="marcacao-atual" class="marcacao-atual" hidden></p>
+
+      <div class="acoes-marcar">
+        <button type="button" id="botao-sei" class="botao botao-sei">Sei</button>
+        <button type="button" id="botao-rever" class="botao botao-rever">A rever</button>
+      </div>
+      <div class="acoes-navegar">
+        <button type="button" id="botao-anterior" class="botao botao-neutro">Anterior</button>
+      </div>
     </section>
 
     <section id="ecra-resumo" aria-label="Resumo" hidden>
+      <h2 id="titulo-resumo" tabindex="-1">Resumo da sessão</h2>
     </section>
 
     <section id="ecra-erro" aria-label="Erro" hidden>
