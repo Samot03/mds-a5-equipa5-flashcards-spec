@@ -1,0 +1,1 @@
+# mds-a5-equipa5-flashcards-spec
