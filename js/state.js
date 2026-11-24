@@ -26,14 +26,7 @@ export function validarBaralho(dados) {
 }
 
 export function criarSessao(cards) {
-  return {
-    ordem: cards.map((cartao) => cartao.id),
-    indice: 0,
-    virado: false,
-    vistos: {},
-    marcas: {},
-    terminado: false,
-  };
+  return sessaoLimpa(cards.map((cartao) => cartao.id));
 }
 
 export function virar(s) {
@@ -75,6 +68,30 @@ export function anterior(s) {
   return { ...s, indice: s.indice - 1, virado: false };
 }
 
+function sessaoLimpa(ordem) {
+  return {
+    ordem,
+    indice: 0,
+    virado: false,
+    vistos: {},
+    marcas: {},
+    terminado: false,
+  };
+}
+
+export function recomecar(s) {
+  return sessaoLimpa(s.ordem);
+}
+
+export function resumo(s, cards) {
+  const idsARever = s.ordem.filter((id) => s.marcas[id] === "rever");
+  return {
+    sei: s.ordem.filter((id) => s.marcas[id] === "sei").length,
+    rever: idsARever.length,
+    aRever: idsARever.map((id) => cartaoPorId(cards, id).marca),
+  };
+}
+
 export function progresso(s) {
   return {
     posicao: s.indice + 1,
@@ -83,7 +100,10 @@ export function progresso(s) {
   };
 }
 
-export function cartaoAtual(s, cards) {
-  const id = s.ordem[s.indice];
+function cartaoPorId(cards, id) {
   return cards.find((cartao) => cartao.id === id);
+}
+
+export function cartaoAtual(s, cards) {
+  return cartaoPorId(cards, idAtual(s));
 }

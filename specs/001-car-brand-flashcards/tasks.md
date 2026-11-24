@@ -124,11 +124,11 @@ marcações (quickstart passos 11, 12, 13)
 
 ### Implementation for User Story 4
 
-- [ ] T023 [P] [US4] Implementar em `js/state.js` as funções puras `resumo(s, cards)` (devolve `{ sei, rever, aRever }` a partir de [data-model.md](./data-model.md) `Sessão.marcas`, com os nomes das marcas pela ordem de `Sessão.ordem`) e `recomecar(s)` (mesma `ordem`, `indice 0`, `virado`, `vistos`, `marcas` e `terminado` limpos) — FR-006, FR-007, SC-002
-- [ ] T024 [P] [US4] Preencher o ecrã de resumo em `index.html`: título "Resumo da sessão" com `tabindex="-1"`, as linhas "Sei: X" e "A rever: Y", uma lista vazia para as marcas a rever, o parágrafo "Não há cartões a rever." (oculto por omissão) e o botão `type="button"` "Recomeçar" ([contracts/ui.md](./contracts/ui.md#ecrã-de-resumo)) — FR-006, FR-007, FR-010
-- [ ] T025 [P] [US4] Estilizar o ecrã de resumo em `styles.css`: contagens destacadas, lista legível e botão "Recomeçar" `#1d4ed8` com texto branco e altura mínima de 44 px — FR-008, FR-011
-- [ ] T026 [US4] Em `js/ui.js`, desenhar o resumo com `resumo(sessao, cards)`: contagens, itens da lista a rever, e a mensagem "Não há cartões a rever." em vez da lista quando `rever === 0` — FR-006 (depende de T023, T024)
-- [ ] T027 [US4] Em `js/app.js`, ligar "Recomeçar" a `atualizar(recomecar(sessao))` e pôr o foco no cartão — FR-007, FR-009 (depende de T023, T026)
+- [X] T023 [P] [US4] Implementar em `js/state.js` as funções puras `resumo(s, cards)` (devolve `{ sei, rever, aRever }` a partir de [data-model.md](./data-model.md) `Sessão.marcas`, com os nomes das marcas pela ordem de `Sessão.ordem`) e `recomecar(s)` (mesma `ordem`, `indice 0`, `virado`, `vistos`, `marcas` e `terminado` limpos) — FR-006, FR-007, SC-002
+- [X] T024 [P] [US4] Preencher o ecrã de resumo em `index.html`: título "Resumo da sessão" com `tabindex="-1"`, as linhas "Sei: X" e "A rever: Y", uma lista vazia para as marcas a rever, o parágrafo "Não há cartões a rever." (oculto por omissão) e o botão `type="button"` "Recomeçar" ([contracts/ui.md](./contracts/ui.md#ecrã-de-resumo)) — FR-006, FR-007, FR-010
+- [X] T025 [P] [US4] Estilizar o ecrã de resumo em `styles.css`: contagens destacadas, lista legível e botão "Recomeçar" `#1d4ed8` com texto branco e altura mínima de 44 px — FR-008, FR-011
+- [X] T026 [US4] Em `js/ui.js`, desenhar o resumo com `resumo(sessao, cards)`: contagens, itens da lista a rever, e a mensagem "Não há cartões a rever." em vez da lista quando `rever === 0` — FR-006 (depende de T023, T024)
+- [X] T027 [US4] Em `js/app.js`, ligar "Recomeçar" a `atualizar(recomecar(sessao))` e pôr o foco no cartão — FR-007, FR-009 (depende de T023, T026)
 
 **Checkpoint**: quickstart passos 11, 12, 13 e 21; a sessão completa só com teclado (passo 15)
 

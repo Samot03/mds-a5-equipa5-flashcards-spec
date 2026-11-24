@@ -1,6 +1,6 @@
 // Interface: desenha o ecrã a partir do estado, sem regras de estado (contracts/ui.md).
 
-import { cartaoAtual, podeMarcar, progresso } from "./state.js";
+import { cartaoAtual, podeMarcar, progresso, resumo } from "./state.js";
 
 const NOMES_MARCA = { sei: "Sei", rever: "A rever" };
 
@@ -26,6 +26,10 @@ const elementos = {
   progressoTexto: document.getElementById("progresso-texto"),
   progressoBarra: document.getElementById("progresso-barra"),
   progressoPreenchimento: document.getElementById("progresso-preenchimento"),
+  contagemSei: document.getElementById("contagem-sei"),
+  contagemRever: document.getElementById("contagem-rever"),
+  listaRever: document.getElementById("lista-rever"),
+  semRever: document.getElementById("sem-rever"),
 };
 
 function mostrarEcra(nome) {
@@ -94,13 +98,35 @@ function desenharBotoes(sessao) {
   elementos.botaoAnterior.disabled = sessao.indice === 0;
 }
 
-export function render(sessao, cards) {
+function itemLista(texto) {
+  const item = document.createElement("li");
+  item.textContent = texto;
+  return item;
+}
+
+function desenharResumo({ sei, rever, aRever }) {
+  elementos.contagemSei.textContent = sei;
+  elementos.contagemRever.textContent = rever;
+  elementos.listaRever.replaceChildren(...aRever.map(itemLista));
+  elementos.listaRever.hidden = rever === 0;
+  elementos.semRever.hidden = rever > 0;
+}
+
+function desenharEstudo(sessao, cards) {
   const cartao = cartaoAtual(sessao, cards);
-  mostrarEcra(sessao.terminado ? "resumo" : "estudo");
   desenharCartao(cartao, sessao.virado);
   desenharMarcacao(sessao.marcas[cartao.id]);
   desenharBotoes(sessao);
+}
+
+export function render(sessao, cards) {
+  mostrarEcra(sessao.terminado ? "resumo" : "estudo");
   desenharProgresso(sessao);
+  if (sessao.terminado) {
+    desenharResumo(resumo(sessao, cards));
+  } else {
+    desenharEstudo(sessao, cards);
+  }
 }
 
 export function focarPrincipal(sessao) {
