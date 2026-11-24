@@ -4,6 +4,8 @@ const MINIMO_CARTOES = 8;
 const CAMPOS_TEXTO = ["id", "marca", "pais", "fundador"];
 const VALORES_MARCA = ["sei", "rever"];
 
+// --- Auxiliares internos ---
+
 function textoValido(valor) {
   return typeof valor === "string" && valor.trim() !== "";
 }
@@ -17,6 +19,31 @@ function cartaoValido(cartao) {
   );
 }
 
+function sessaoLimpa(ordem) {
+  return {
+    ordem,
+    indice: 0,
+    virado: false,
+    vistos: {},
+    marcas: {},
+    terminado: false,
+  };
+}
+
+function idAtual(s) {
+  return s.ordem[s.indice];
+}
+
+function eUltimo(s) {
+  return s.indice === s.ordem.length - 1;
+}
+
+function cartaoPorId(cards, id) {
+  return cards.find((cartao) => cartao.id === id);
+}
+
+// --- Baralho e criação da sessão ---
+
 export function validarBaralho(dados) {
   if (!Array.isArray(dados) || dados.length < MINIMO_CARTOES) {
     return false;
@@ -29,6 +56,8 @@ export function criarSessao(cards) {
   return sessaoLimpa(cards.map((cartao) => cartao.id));
 }
 
+// --- Transições (devolvem sempre uma sessão nova, ou a mesma se não se aplicam) ---
+
 export function virar(s) {
   if (s.terminado) {
     return s;
@@ -36,18 +65,6 @@ export function virar(s) {
   const virado = !s.virado;
   const vistos = virado ? { ...s.vistos, [idAtual(s)]: true } : s.vistos;
   return { ...s, virado, vistos };
-}
-
-function idAtual(s) {
-  return s.ordem[s.indice];
-}
-
-function eUltimo(s) {
-  return s.indice === s.ordem.length - 1;
-}
-
-export function podeMarcar(s) {
-  return s.vistos[idAtual(s)] === true;
 }
 
 export function marcar(s, valor) {
@@ -68,17 +85,6 @@ export function anterior(s) {
   return { ...s, indice: s.indice - 1, virado: false };
 }
 
-function sessaoLimpa(ordem) {
-  return {
-    ordem,
-    indice: 0,
-    virado: false,
-    vistos: {},
-    marcas: {},
-    terminado: false,
-  };
-}
-
 export function recomecar(s) {
   return sessaoLimpa(s.ordem);
 }
@@ -93,13 +99,14 @@ export function baralhar(s, aleatorio = Math.random) {
   return sessaoLimpa(ordem);
 }
 
-export function resumo(s, cards) {
-  const idsARever = s.ordem.filter((id) => s.marcas[id] === "rever");
-  return {
-    sei: s.ordem.filter((id) => s.marcas[id] === "sei").length,
-    rever: idsARever.length,
-    aRever: idsARever.map((id) => cartaoPorId(cards, id).marca),
-  };
+// --- Leituras derivadas ---
+
+export function podeMarcar(s) {
+  return s.vistos[idAtual(s)] === true;
+}
+
+export function cartaoAtual(s, cards) {
+  return cartaoPorId(cards, idAtual(s));
 }
 
 export function progresso(s) {
@@ -110,10 +117,11 @@ export function progresso(s) {
   };
 }
 
-function cartaoPorId(cards, id) {
-  return cards.find((cartao) => cartao.id === id);
-}
-
-export function cartaoAtual(s, cards) {
-  return cartaoPorId(cards, idAtual(s));
+export function resumo(s, cards) {
+  const idsARever = s.ordem.filter((id) => s.marcas[id] === "rever");
+  return {
+    sei: s.ordem.filter((id) => s.marcas[id] === "sei").length,
+    rever: idsARever.length,
+    aRever: idsARever.map((id) => cartaoPorId(cards, id).marca),
+  };
 }

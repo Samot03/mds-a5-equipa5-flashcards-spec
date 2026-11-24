@@ -26,16 +26,26 @@ O fluxo disciplinado do Spec Kit, com **um commit por fase** para que cada artef
 
 ## Artefactos de especificação
 
-São gerados pelo `specify init` e pelos comandos de cada fase. As ligações abaixo serão atualizadas com os caminhos reais:
+São gerados pelo `specify init` e pelos comandos de cada fase:
 
 | Artefacto | Ficheiro |
 | --- | --- |
-| Constitution | _a preencher_ |
-| Spec | _a preencher_ |
-| Plan | _a preencher_ |
-| Tasks | _a preencher_ |
+| Constitution | [`.specify/memory/constitution.md`](.specify/memory/constitution.md) |
+| Spec | [`specs/001-car-brand-flashcards/spec.md`](specs/001-car-brand-flashcards/spec.md) |
+| Plan | [`specs/001-car-brand-flashcards/plan.md`](specs/001-car-brand-flashcards/plan.md) |
+| Tasks | [`specs/001-car-brand-flashcards/tasks.md`](specs/001-car-brand-flashcards/tasks.md) |
+| Checklist de verificação | [`specs/001-car-brand-flashcards/quickstart.md`](specs/001-car-brand-flashcards/quickstart.md) |
 
+## Correr localmente
+
+O baralho é carregado com `fetch`, por isso a app tem de ser servida por HTTP (não funciona aberta como ficheiro). Na raiz do repositório:
+
+```
+py -m http.server 8000
+```
+
+ou `npx serve .`, e abrir `http://localhost:8000`.
 
 ## Deploy
 
-Netlify, sem comando de build, com a pasta da app como pasta de publicação.
+Netlify, sem comando de build, com a raiz do repositório como pasta de publicação.

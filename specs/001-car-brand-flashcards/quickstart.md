@@ -90,3 +90,20 @@ e seguir os exemplos de [contracts/state-api.md](./contracts/state-api.md#exempl
 
 Netlify: publicar a raiz do repositório, sem comando de build. Depois de publicar, repetir os
 passos 1, 3, 11 e 14 no endereço público.
+
+## 7. Registo da verificação automática (2026-11-24)
+
+Feita pelo agente no browser do Claude, com viewport emulado a 360 × 740 e a 1280 × 800. **Não
+substitui** a verificação da equipa: as caixas da secção 4 continuam por marcar até a equipa
+repetir os passos num telemóvel real e num desktop (T033).
+
+| Passo | Resultado | Notas |
+|---|---|---|
+| 1, 3–14, 16, 17, 19–21, 23 | PASS a 360 px | Script de verificação na consola; contrastes medidos entre 5,02:1 e 14,68:1 |
+| 2 | PASS | Falhas de `fetch` simuladas (404, JSON inválido, baralho inválido, sem rede); o browser guardava o `cards.json` em cache, ver a nota do passo 2 |
+| 14 | PASS a 1280 px | Contentor com 512 px, sem scroll horizontal |
+| 15, 25 (SC-004) | PASS a 1280 px | Sessão completa com teclas reais: Tab, Espaço, Tab, Enter × 10; foco no título do resumo; Tab + Enter em "Recomeçar" volta ao cartão |
+| 18 (FR-012) | **Por verificar** | O browser do Claude não emula `prefers-reduced-motion`; a regra CSS está carregada |
+| 22 (SC-001) | **Por verificar** | Cronometrar uma sessão real |
+| 26 (SC-005) | **Por verificar** | Depende da T003 (factos confirmados pela equipa) |
+| Telemóvel real | **Por verificar** | Só foi testado o viewport emulado |
