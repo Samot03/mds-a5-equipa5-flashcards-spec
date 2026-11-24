@@ -1,6 +1,6 @@
 // Interface: desenha o ecrã a partir do estado, sem regras de estado (contracts/ui.md).
 
-import { cartaoAtual, podeMarcar } from "./state.js";
+import { cartaoAtual, podeMarcar, progresso } from "./state.js";
 
 const NOMES_MARCA = { sei: "Sei", rever: "A rever" };
 
@@ -22,12 +22,29 @@ const elementos = {
   botaoRever: document.getElementById("botao-rever"),
   botaoAnterior: document.getElementById("botao-anterior"),
   tituloResumo: document.getElementById("titulo-resumo"),
+  progresso: document.getElementById("progresso"),
+  progressoTexto: document.getElementById("progresso-texto"),
+  progressoBarra: document.getElementById("progresso-barra"),
+  progressoPreenchimento: document.getElementById("progresso-preenchimento"),
 };
 
 function mostrarEcra(nome) {
   for (const [chave, ecra] of Object.entries(ecras)) {
     ecra.hidden = chave !== nome;
   }
+  elementos.progresso.hidden = nome === "erro";
+}
+
+// O texto mostra a posição; a barra mede os cartões já marcados (research R6).
+function desenharProgresso(sessao) {
+  const { posicao, total, marcados } = progresso(sessao);
+  const texto = `Cartão ${posicao} de ${total}`;
+  elementos.progressoTexto.textContent = texto;
+  elementos.progressoTexto.hidden = sessao.terminado;
+  elementos.progressoBarra.setAttribute("aria-valuemax", total);
+  elementos.progressoBarra.setAttribute("aria-valuenow", marcados);
+  elementos.progressoBarra.setAttribute("aria-valuetext", texto);
+  elementos.progressoPreenchimento.style.width = `${(marcados / total) * 100}%`;
 }
 
 function textoFaceVisivel(cartao, virado) {
@@ -83,6 +100,7 @@ export function render(sessao, cards) {
   desenharCartao(cartao, sessao.virado);
   desenharMarcacao(sessao.marcas[cartao.id]);
   desenharBotoes(sessao);
+  desenharProgresso(sessao);
 }
 
 export function focarPrincipal(sessao) {

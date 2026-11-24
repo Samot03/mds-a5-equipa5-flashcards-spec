@@ -11,6 +11,14 @@
   <main class="contentor">
     <h1>Flashcards de Estudo</h1>
 
+    <div id="progresso" class="progresso" hidden>
+      <p id="progresso-texto" class="progresso-texto"></p>
+      <div id="progresso-barra" class="progresso-barra" role="progressbar"
+           aria-label="Progresso" aria-valuemin="0">
+        <div id="progresso-preenchimento" class="progresso-preenchimento"></div>
+      </div>
+    </div>
+
     <section id="ecra-estudo" aria-label="Estudo" hidden>
       <button type="button" id="cartao" class="cartao">
         <span class="cartao-interior">

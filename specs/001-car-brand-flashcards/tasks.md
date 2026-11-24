@@ -105,10 +105,10 @@ cartão seguinte de frente; "Anterior" volta, mostra a marcação atual e permit
 
 ### Implementation for User Story 3
 
-- [ ] T019 [P] [US3] Implementar em `js/state.js` a função pura `progresso(s)` que devolve `{ posicao, total, marcados }`, a partir de [data-model.md](./data-model.md) `Sessão.indice`, `Sessão.ordem` e `Sessão.marcas` (tabela "Valores derivados") — FR-005
-- [ ] T020 [P] [US3] Acrescentar a `index.html`, fora dos ecrãs de estudo e resumo para ficar visível nos dois, o texto de posição e a barra `role="progressbar"` com `aria-valuemin="0"` e um elemento interior de preenchimento (research R6) — FR-005, FR-010
-- [ ] T021 [P] [US3] Estilizar a barra de progresso em `styles.css`: trilho com altura fixa e cantos arredondados, preenchimento `#1d4ed8` com largura em percentagem — FR-005, FR-011
-- [ ] T022 [US3] Em `js/ui.js`, desenhar o progresso com `progresso(sessao)`: texto "Cartão N de T", largura do preenchimento `marcados / total`, `aria-valuemax`, `aria-valuenow` e `aria-valuetext`; no resumo, a barra fica a 100 % — FR-005 (depende de T019, T020)
+- [X] T019 [P] [US3] Implementar em `js/state.js` a função pura `progresso(s)` que devolve `{ posicao, total, marcados }`, a partir de [data-model.md](./data-model.md) `Sessão.indice`, `Sessão.ordem` e `Sessão.marcas` (tabela "Valores derivados") — FR-005
+- [X] T020 [P] [US3] Acrescentar a `index.html`, fora dos ecrãs de estudo e resumo para ficar visível nos dois, o texto de posição e a barra `role="progressbar"` com `aria-valuemin="0"` e um elemento interior de preenchimento (research R6) — FR-005, FR-010
+- [X] T021 [P] [US3] Estilizar a barra de progresso em `styles.css`: trilho com altura fixa e cantos arredondados, preenchimento `#1d4ed8` com largura em percentagem — FR-005, FR-011
+- [X] T022 [US3] Em `js/ui.js`, desenhar o progresso com `progresso(sessao)`: texto "Cartão N de T", largura do preenchimento `marcados / total`, `aria-valuemax`, `aria-valuenow` e `aria-valuetext`; no resumo, a barra fica a 100 % — FR-005 (depende de T019, T020)
 
 **Checkpoint**: quickstart passos 9 e 10
 

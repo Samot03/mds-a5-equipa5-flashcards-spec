@@ -75,6 +75,14 @@ export function anterior(s) {
   return { ...s, indice: s.indice - 1, virado: false };
 }
 
+export function progresso(s) {
+  return {
+    posicao: s.indice + 1,
+    total: s.ordem.length,
+    marcados: Object.keys(s.marcas).length,
+  };
+}
+
 export function cartaoAtual(s, cards) {
   const id = s.ordem[s.indice];
   return cards.find((cartao) => cartao.id === id);
