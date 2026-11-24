@@ -143,9 +143,9 @@ ordem; cada marca aparece uma só vez (quickstart passos 7 e 8)
 
 ### Implementation for User Story 5
 
-- [ ] T028 [P] [US5] Implementar em `js/state.js` a função pura `baralhar(s, aleatorio = Math.random)`: Fisher–Yates sobre uma cópia de [data-model.md](./data-model.md) `Sessão.ordem` e sessão recomeçada (`indice 0`, `virado`, `vistos`, `marcas` e `terminado` limpos) (research R2, Clarificação Q1) — FR-004
-- [ ] T029 [P] [US5] Acrescentar ao ecrã de estudo em `index.html` o botão `type="button"` "Baralhar", e o estilo correspondente em `styles.css` (`#1d4ed8`, texto branco, 44 px) — FR-004, FR-010, FR-011
-- [ ] T030 [US5] Em `js/app.js`, ligar "Baralhar" a `atualizar(baralhar(sessao))` e pôr o foco no cartão — FR-004, FR-009 (depende de T028, T029)
+- [X] T028 [P] [US5] Implementar em `js/state.js` a função pura `baralhar(s, aleatorio = Math.random)`: Fisher–Yates sobre uma cópia de [data-model.md](./data-model.md) `Sessão.ordem` e sessão recomeçada (`indice 0`, `virado`, `vistos`, `marcas` e `terminado` limpos) (research R2, Clarificação Q1) — FR-004
+- [X] T029 [P] [US5] Acrescentar ao ecrã de estudo em `index.html` o botão `type="button"` "Baralhar", e o estilo correspondente em `styles.css` (`#1d4ed8`, texto branco, 44 px) — FR-004, FR-010, FR-011
+- [X] T030 [US5] Em `js/app.js`, ligar "Baralhar" a `atualizar(baralhar(sessao))` e pôr o foco no cartão — FR-004, FR-009 (depende de T028, T029)
 
 **Checkpoint**: todas as user stories funcionam — quickstart passos 7 e 8
 

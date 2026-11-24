@@ -83,6 +83,16 @@ export function recomecar(s) {
   return sessaoLimpa(s.ordem);
 }
 
+// Fisher–Yates sobre uma cópia; baralhar recomeça a sessão (Clarificação Q1).
+export function baralhar(s, aleatorio = Math.random) {
+  const ordem = [...s.ordem];
+  for (let i = ordem.length - 1; i > 0; i--) {
+    const j = Math.floor(aleatorio() * (i + 1));
+    [ordem[i], ordem[j]] = [ordem[j], ordem[i]];
+  }
+  return sessaoLimpa(ordem);
+}
+
 export function resumo(s, cards) {
   const idsARever = s.ordem.filter((id) => s.marcas[id] === "rever");
   return {

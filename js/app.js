@@ -1,6 +1,14 @@
 // Ponto de entrada: carrega o baralho, guarda a sessão e liga os eventos.
 
-import { validarBaralho, criarSessao, virar, marcar, anterior, recomecar } from "./state.js";
+import {
+  validarBaralho,
+  criarSessao,
+  virar,
+  marcar,
+  anterior,
+  recomecar,
+  baralhar,
+} from "./state.js";
 import { render, mostrarErro, focarPrincipal } from "./ui.js";
 
 const CAMINHO_BARALHO = "data/cards.json";
@@ -43,6 +51,7 @@ function ligarEventos() {
   aoClicar("botao-rever", () => atualizarEFocar(marcar(sessao, "rever")));
   aoClicar("botao-anterior", () => atualizarEFocar(anterior(sessao)));
   aoClicar("botao-recomecar", () => atualizarEFocar(recomecar(sessao)));
+  aoClicar("botao-baralhar", () => atualizarEFocar(baralhar(sessao)));
 }
 
 async function iniciar() {
