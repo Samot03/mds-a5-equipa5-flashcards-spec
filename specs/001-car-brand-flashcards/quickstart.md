@@ -105,5 +105,5 @@ repetir os passos num telemóvel real e num desktop (T033).
 | 15, 25 (SC-004) | PASS a 1280 px | Sessão completa com teclas reais: Tab, Espaço, Tab, Enter × 10; foco no título do resumo; Tab + Enter em "Recomeçar" volta ao cartão |
 | 18 (FR-012) | **Por verificar** | O browser do Claude não emula `prefers-reduced-motion`; a regra CSS está carregada |
 | 22 (SC-001) | **Por verificar** | Cronometrar uma sessão real |
-| 26 (SC-005) | **Por verificar** | Depende da T003 (factos confirmados pela equipa) |
+| 26 (SC-005) | PASS | T003 feita: factos confirmados e decididos pela equipa, fontes em [factos.md](./factos.md) |
 | Telemóvel real | **Por verificar** | Só foi testado o viewport emulado |

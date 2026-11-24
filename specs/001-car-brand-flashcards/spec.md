@@ -225,20 +225,21 @@ muda e que cada marca continua a aparecer exatamente uma vez por sessão.
 
 ### Conteúdo do baralho
 
-Factos a verificar manualmente pela equipa antes da implementação (ver Assumptions):
+Factos verificados pela equipa a 2026-11-24, com fontes em [factos.md](./factos.md) (ver
+Assumptions):
 
-| # | Frente  | País de origem   | Ano de fundação | Fundador(es)                         |
-|---|---------|------------------|-----------------|--------------------------------------|
-| 1 | Ferrari | Itália           | 1947            | Enzo Ferrari                         |
-| 2 | Porsche | Alemanha         | 1931            | Ferdinand Porsche                    |
-| 3 | Toyota  | Japão            | 1937            | Kiichiro Toyoda                      |
-| 4 | Volvo   | Suécia           | 1927            | Assar Gabrielsson e Gustaf Larson    |
-| 5 | Renault | França           | 1899            | Louis, Marcel e Fernand Renault      |
-| 6 | SEAT    | Espanha          | 1950            | Instituto Nacional de Industria (INI)|
-| 7 | Škoda   | República Checa  | 1895            | Václav Laurin e Václav Klement       |
-| 8 | Hyundai | Coreia do Sul    | 1967            | Chung Ju-yung                        |
-| 9 | Ford    | Estados Unidos   | 1903            | Henry Ford                           |
-| 10| Tesla   | Estados Unidos   | 2003            | Martin Eberhard e Marc Tarpenning    |
+| # | Frente  | País de origem   | Ano de fundação | Fundador(es)                                      |
+|---|---------|------------------|-----------------|---------------------------------------------------|
+| 1 | Ferrari | Itália           | 1947            | Enzo Ferrari                                      |
+| 2 | Porsche | Alemanha         | 1931            | Ferdinand Porsche                                 |
+| 3 | Toyota  | Japão            | 1937            | Kiichiro Toyoda                                   |
+| 4 | Volvo   | Suécia           | 1927            | Assar Gabrielsson e Gustaf Larson                 |
+| 5 | Renault | França           | 1899            | Louis, Marcel e Fernand Renault                   |
+| 6 | SEAT    | Espanha          | 1950            | Instituto Nacional de Industria (INI), com a Fiat |
+| 7 | Škoda   | República Checa  | 1895            | Václav Laurin e Václav Klement                    |
+| 8 | Hyundai | Coreia do Sul    | 1967            | Chung Ju-yung e Chung Se-yung                     |
+| 9 | Ford    | Estados Unidos   | 1903            | Henry Ford                                        |
+| 10| Tesla   | Estados Unidos   | 2003            | Martin Eberhard e Marc Tarpenning                 |
 
 ### Key Entities *(include if feature involves data)*
 
@@ -281,13 +282,15 @@ Factos a verificar manualmente pela equipa antes da implementação (ver Assumpt
   (o polimento visual não é objetivo) e o princípio VIII (verificabilidade).
 - **FR-009 a FR-013** vêm dos princípios V e X da constitution e são incluídos para serem
   verificados na mesma checklist.
-- **Factos a confirmar pela equipa**:
-  - Ferrari: 1947 é o ano da marca Ferrari; a empresa de Enzo Ferrari, Auto Avio Costruzioni,
-    é de 1939. A equipa decide qual ano usar.
-  - Tesla: os fundadores originais são Eberhard e Tarpenning; Elon Musk, JB Straubel e Ian Wright
-    são também reconhecidos como cofundadores desde 2009.
-  - Škoda: 1895 é a fundação da Laurin & Klement, que adotou o nome Škoda em 1925.
-  - SEAT: foi fundada por uma entidade (o INI, com participação da Fiat), não por uma pessoa.
+- **Factos: decisões da equipa (2026-11-24)**:
+  - Ferrari: fica 1947, o ano da marca Ferrari (primeiro carro, o 125 S); a empresa de Enzo
+    Ferrari, Auto Avio Costruzioni, é de 1939.
+  - Tesla: ficam os fundadores originais, Eberhard e Tarpenning; Elon Musk, JB Straubel e Ian
+    Wright são também reconhecidos como cofundadores desde 2009.
+  - Škoda: fica 1895, a fundação da Laurin & Klement, que passou a Škoda com a fusão de 1925.
+  - SEAT: fundada por uma entidade, não por uma pessoa; acrescenta-se "com a Fiat", parceira
+    na fundação.
+  - Hyundai: acrescenta-se Chung Se-yung, irmão de Chung Ju-yung e cofundador.
 - **Task B**: a "Task B" referida em SC-003 é a checklist de critérios de aceitação do
   enunciado do trabalho; os cenários de aceitação desta spec são a sua base.
 - **Fora de âmbito**: contas de utilizador, guardar progresso entre visitas, criar ou editar
