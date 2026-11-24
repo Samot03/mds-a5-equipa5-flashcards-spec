@@ -157,9 +157,9 @@ ordem; cada marca aparece uma só vez (quickstart passos 7 e 8)
 
 - [X] T031 Rever `js/app.js`, `js/state.js` e `js/ui.js` contra o princípio VI: funções pequenas com um só propósito, nomes descritivos, `state.js` sem acesso ao DOM, `ui.js` sem regras de estado, sem código morto, comentado ou não usado, e sem erros nem avisos na consola — FR-001..FR-014 (transversal)
 - [X] T032 [P] Rever todo o texto visível e as etiquetas acessíveis em `index.html` e `js/ui.js`: português de Portugal pós-Acordo, `lang="pt-PT"`, e nomes acessíveis em todos os controlos (quickstart passos 16 e 19) — FR-010, FR-013
-- [ ] T033 Fazer a verificação final com a checklist da secção 4 do `specs/001-car-brand-flashcards/quickstart.md`, passos 1 a 26, em telemóvel (360 px) e em desktop, com `py -m http.server 8000` (ou `npx serve .`); marcar cada ✓ no próprio quickstart; qualquer falha volta à tarefa do requisito correspondente antes de continuar — SC-001, SC-002, SC-003, SC-004, SC-005 (depende de T003 e de T001–T032)
-- [ ] T034 Publicar no Netlify a raiz do repositório (a pasta com `index.html`), sem comando de build (research R11), e repetir no endereço público os passos 1, 3, 11 e 14 do quickstart, em telemóvel e em desktop — FR-008, SC-003 (depende de T033)
-- [ ] T035 Atualizar `README.md`: link do Netlify na secção "Demo" e caminhos reais na tabela de artefactos (`.specify/memory/constitution.md`, `specs/001-car-brand-flashcards/spec.md`, `plan.md`, `tasks.md`) (depende de T034)
+- [X] T033 Fazer a verificação final com a checklist da secção 4 do `specs/001-car-brand-flashcards/quickstart.md`, passos 1 a 26, em telemóvel (360 px) e em desktop, com `py -m http.server 8000` (ou `npx serve .`); marcar cada ✓ no próprio quickstart; qualquer falha volta à tarefa do requisito correspondente antes de continuar — SC-001, SC-002, SC-003, SC-004, SC-005 (depende de T003 e de T001–T032)
+- [X] T034 Publicar no Netlify a raiz do repositório (a pasta com `index.html`), sem comando de build (research R11), e repetir no endereço público os passos 1, 3, 11 e 14 do quickstart, em telemóvel e em desktop — FR-008, SC-003 (depende de T033)
+- [X] T035 Atualizar `README.md`: link do Netlify na secção "Demo" e caminhos reais na tabela de artefactos (`.specify/memory/constitution.md`, `specs/001-car-brand-flashcards/spec.md`, `plan.md`, `tasks.md`) (depende de T034)
 
 ---
 
